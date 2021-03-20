@@ -48,6 +48,7 @@ class DemoApplicationTests extends Mockito {
 
 	}
 
+	@Test
 	void beanConfigTest(){
 		Person person = new Person();
 		person.setName("Jan");
