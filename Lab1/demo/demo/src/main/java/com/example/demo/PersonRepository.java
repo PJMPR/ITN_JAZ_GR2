@@ -12,7 +12,7 @@ public class PersonRepository {
     }
 
     public void save (Person person){
-        persondb.addToArray(person);
+        persondb.addPersonToArray(person);
 
     }
 

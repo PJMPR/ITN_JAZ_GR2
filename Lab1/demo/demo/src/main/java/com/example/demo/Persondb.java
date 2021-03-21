@@ -5,15 +5,19 @@ import org.springframework.stereotype.Component;
 @Component
 
 public class Persondb {
-    private Person[] personArray;
+
+    private final Person[] persons;
 
     public Persondb() {
-        personArray = new Person[1000];
+        persons = new Person[1000];
     }
 
-    public void addToArray(Person person)
-    {
-        personArray[0] = person;
+    public void addPersonToArray(Person person) {
+        this.persons[0] = person;
+    }
+
+    public Person[] getPersonArray() {
+        return this.persons;
     }
 
 }
