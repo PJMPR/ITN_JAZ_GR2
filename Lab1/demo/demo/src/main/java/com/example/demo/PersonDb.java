@@ -2,11 +2,14 @@ package com.example.demo;
 
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Component
 public class PersonDb {
-    Person[] person = new Person[1000];
+    Person[] people = new Person[1000];
 
     public Person[] getPersonArray() {
-        return new Person[0];
+        return people;
     }
 }
