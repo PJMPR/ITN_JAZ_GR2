@@ -13,11 +13,4 @@
         <constructor-arg index="0" ref="second"/>
     </bean>
 
-    <bean id="persondb" class="com.example.demo.PersonDb"></bean>
-
-    <bean id="personrepo" class="com.example.demo.PersonRepository">
-        <constructor-arg index="0" ref="persondb"/>
-    </bean>
-
-
 </beans>
