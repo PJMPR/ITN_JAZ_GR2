@@ -1,9 +1,18 @@
 package com.example.demo;
 
 public class Person {
-    public void setName(String jan) {
+
+    private String name;
+
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public boolean getName() {
+    public String getName() {
+        return this.name;
+    }
+
+    public void printMe(){
+        System.out.println("Person");
     }
 }

@@ -3,14 +3,10 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="first" class="com.example.demo.FirstComponent"></bean>
+    <bean id="personDb" class="com.example.demo.PersonDb"></bean>
 
-    <bean id="second" class="com.example.demo.SecondComponent">
-        <constructor-arg index="0" ref="first"/>
-    </bean>
-
-    <bean id="third" class="com.example.demo.ThirdComponent">
-        <constructor-arg index="0" ref="second"/>
+    <bean id="repository" class="com.example.demo.PersonRepository">
+        <constructor-arg index="0" ref="personDb"/>
     </bean>
 
 </beans>
