@@ -12,5 +12,9 @@
     <bean id="third" class="com.example.demo.ThirdComponent">
         <constructor-arg index="0" ref="second"/>
     </bean>
+    <bean id="personDb" class="com.example.demo.PersonDb"></bean>
+    <bean id="repository" class="com.example.demo.PersonRepository">
+        <constructor-arg index="0" ref="personDb"/>
+    </bean>
 
 </beans>

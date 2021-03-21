@@ -21,6 +21,7 @@ public class DemoApplication {
 
 		ThirdComponent thirdComponent = context.getBean(ThirdComponent.class);
 		thirdComponent.printMe();
+
 	}
 
 }
