@@ -8,6 +8,6 @@ public class Person {
     }
     public void setName(String name){
 
-        his.name = name;
+        this.name = name;
     }
 }
