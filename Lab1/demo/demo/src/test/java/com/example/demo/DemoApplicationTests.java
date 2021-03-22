@@ -8,8 +8,6 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.util.Assert;
 
-import java.util.List;
-
 @SpringBootTest
 class DemoApplicationTests extends Mockito {
 

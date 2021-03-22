@@ -11,12 +11,6 @@ public class DemoApplication {
 
 	public static void main(String[] args) {
 
-		//SpringApplication.run(DemoApplication.class, args);
-
-//		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
-//		context.scan("com.example.demo");
-//		context.refresh();
-
 		ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
 
 		ThirdComponent thirdComponent = context.getBean(ThirdComponent.class);
