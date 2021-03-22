@@ -2,7 +2,7 @@ package com.example.demo;
 
 import org.springframework.stereotype.Component;
 
-@Component
+//@Component
 public class SecondComponent {
 
     FirstComponent firstComponent;
