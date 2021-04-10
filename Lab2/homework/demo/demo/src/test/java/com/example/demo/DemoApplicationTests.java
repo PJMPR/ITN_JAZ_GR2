@@ -10,22 +10,44 @@ import static org.hamcrest.Matchers.*;
 
 @SpringBootTest
 @ActiveProfiles(profiles = "pl")
+/*
+Utworzyc profile dla konfiguracji (application-pl.properties ew. yml)
+* */
 class DemoApplicationTests {
 
 	@Autowired
+			/*
+			* Utworzyć klase DialogService i zarajestrować ją w kontenerze DI
+			* */
 	DialogService dialog;
 
 	@Test
 	void contextLoads() {
-
+		/*
+		 * Utworzyć klase LoginMessages i zarajestrować ją w kontenerze DI
+		 * */
 		LoginMessages messages = dialog.getLoginMessages();
 
+		/*
+		 * login messages ma metodę która wyswietla powitanie
+		 * */
 		String welcome = messages.welcome();
 		assertThat(welcome, equalTo("Witaj"));
 		String provideUsername = messages.getUsernameMessage();
-
+		/*
+		 * login messages ma metodę która wyswietla prośbę o wprowadzenie nazwy uzytkownika
+		 * */
 		assertThat(provideUsername, equalTo("podaj nazwe uzytkownika:"));
+
+		/*
+		 * login messages ma metodę która pozwala ustawić login
+		 * */
 		messages.setUsername("admin");
+
+
+		/*
+		 * login messages ma metodę która wyswietla zalogowanego uzytkownika
+		 * */
 		String loggedAsMessage = messages.getLoggedAsMessage();
 		assertThat(loggedAsMessage, equalTo("Zalogowany jako admin"));
 
@@ -38,7 +60,9 @@ class DemoApplicationTests {
 }
 
 @SpringBootTest
-@ActiveProfiles(profiles = "en")
+@ActiveProfiles(profiles = "en")/*
+Utworzyc profile dla konfiguracji (application-en.properties ew. yml)
+* */
 class DemoApplicationEngTests {
 
 	@Autowired
