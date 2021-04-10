@@ -1,0 +1,6 @@
+db:
+  mysql:
+    url: localhost
+    user: sa
+    password: password
+    timeout: 120
