@@ -1,0 +1,4 @@
+message:
+  welcome: Welcome
+  prompt: Enter username
+  loggedAs: Logged as
