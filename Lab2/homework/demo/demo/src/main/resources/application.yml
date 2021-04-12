@@ -1,4 +1,4 @@
 message:
-  welcome: xyz
-  prompt: xyz
-  loggedAs: xyz
+  welcome: '@message.welcome@'
+  prompt: '@message.prompt@'
+  loggedAs: '@message.loggedAs@'

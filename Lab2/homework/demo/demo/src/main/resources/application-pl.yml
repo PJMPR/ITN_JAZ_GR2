@@ -1,4 +1,4 @@
 message:
   welcome: Witaj
-  prompt: Podaj nazwe uzytkownika
+  prompt: "podaj nazwe uzytkownika:"
   loggedAs: Zalogowany jako
