@@ -1,0 +1,3 @@
+application.messages.welcome: "Witaj"
+application.messages.provideUsername: "Podaj nazwe uzytkownika:"
+application.messages.loggedAs: "Zalogowany jako"

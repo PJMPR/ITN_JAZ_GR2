@@ -77,7 +77,7 @@ class DemoApplicationEngTests {
 		assertThat(welcome, equalTo("Welcome"));
 		String provideUsername = messages.getUsernameMessage();
 
-		assertThat(provideUsername, equalTo("provide username:"));
+		assertThat(provideUsername, equalTo("Provide username:"));
 		messages.setUsername("admin");
 		String loggedAsMessage = messages.getLoggedAsMessage();
 		assertThat(loggedAsMessage, equalTo("Logged as admin"));
