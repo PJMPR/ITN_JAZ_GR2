@@ -11,7 +11,7 @@ import static org.hamcrest.Matchers.*;
 @SpringBootTest
 @ActiveProfiles(profiles = "pl")
 /*
-Utworzyc profile dla konfiguracji (application-pl.properties ew. yml)
+* Utworzyc profile dla konfiguracji (application-pl.yml ew. yml)
 * */
 class DemoApplicationTests {
 
@@ -61,7 +61,7 @@ class DemoApplicationTests {
 
 @SpringBootTest
 @ActiveProfiles(profiles = "en")/*
-Utworzyc profile dla konfiguracji (application-en.properties ew. yml)
+Utworzyc profile dla konfiguracji (application-en.yml ew. yml)
 * */
 class DemoApplicationEngTests {
 
