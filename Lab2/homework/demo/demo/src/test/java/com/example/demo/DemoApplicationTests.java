@@ -37,7 +37,7 @@ class DemoApplicationTests {
 		/*
 		 * login messages ma metodę która wyswietla prośbę o wprowadzenie nazwy uzytkownika
 		 * */
-		assertThat(provideUsername, equalTo("podaj nazwe uzytkownika:"));
+		assertThat(provideUsername, equalTo("Podaj nazwe uzytkownika:"));
 
 		/*
 		 * login messages ma metodę która pozwala ustawić login
