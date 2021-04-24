@@ -1,0 +1,138 @@
+{
+	"info": {
+		"_postman_id": "9474ad5b-8ac1-4180-8d9c-425926de1609",
+		"name": "JAZ",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "lab3",
+			"item": [
+				{
+					"name": "HelloWorld",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/hello/test",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"hello",
+								"test"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetNewCar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/hello/model",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"hello",
+								"model"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PostCar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"model\": \"BMW\",\r\n    \"registrationNumber\": \"GD0002\",\r\n    \"milleage\": 100000,\r\n    \"hasAccidents\": true,\r\n    \"price\": 30000.0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/hello/model",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"hello",
+								"model"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TestPathParameter",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/hello/test/SomeValue",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"hello",
+								"test",
+								"SomeValue"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TestQueryParameter",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/hello/test/query?name=Jan",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"hello",
+								"test",
+								"query"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Jan"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
