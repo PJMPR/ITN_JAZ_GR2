@@ -111,7 +111,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/hello/test/query?name=Jan",
+							"raw": "http://localhost:8080/hello/query?name=Jan",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -119,7 +119,6 @@
 							"port": "8080",
 							"path": [
 								"hello",
-								"test",
 								"query"
 							],
 							"query": [
