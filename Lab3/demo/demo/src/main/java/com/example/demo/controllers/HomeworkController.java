@@ -23,8 +23,14 @@ public class HomeworkController {
     }
 
     @PutMapping("person/{number}")
-    public ResponseEntity puttingPerson(@PathVariable("number") String number, @RequestBody Person person){
+    public ResponseEntity puttingPerson(@PathVariable("number") String pathNumber, @RequestBody Person person){
 
         return ResponseEntity.ok(person);
+    }
+
+    @DeleteMapping("person/{number}")
+    public ResponseEntity deletingPerson(@PathVariable("number") String pathNumber){
+
+        return ResponseEntity.ok("");
     }
 }
