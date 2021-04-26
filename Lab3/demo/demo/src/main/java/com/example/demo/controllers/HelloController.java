@@ -1,41 +1,34 @@
 package com.example.demo.controllers;
 
-import com.example.demo.contract.Car;
+import com.example.demo.contract.Person;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("hello")// localhost:8080/hello
-public class HelloController {
-
-    @GetMapping("test") // (HTTP GET) localhost:8080/hello/test
-    public ResponseEntity helloWorld(){
-        return ResponseEntity.ok("Hello World");
+@RequestMapping("homework")
+public class HomeworkController {
+    @GetMapping()
+    public ResponseEntity x(){
+        return ResponseEntity.ok("x");
     }
 
-    @GetMapping("model")
-    public ResponseEntity getNewCar(){
-        return ResponseEntity.ok(new Car(
-                "Audi",
-                "GD0001",
-                100000,
-                false,
-                30000.0
-        ));
+    @GetMapping("{location}")
+    public ResponseEntity params(@PathVariable("location") String location,
+                                 @RequestParam("query") String query){
+        return ResponseEntity.ok("path:" + location + " query:" + query);
     }
 
-    @PostMapping("model")
-    public ResponseEntity saveNewCar(@RequestBody Car car){
-        return ResponseEntity.ok(car);
+    @PostMapping("person")
+    public ResponseEntity postPerson(@RequestBody Person person) {
+        return ResponseEntity.ok(person);
     }
 
-    @GetMapping("test/{someValue}")// /books/Page1 books/Page2 -> "books/Page{number}"
-    public ResponseEntity pathParams(@PathVariable("someValue") String value){
-        return ResponseEntity.ok(value);
+    @PutMapping("person/{id}")
+    public ResponseEntity updatePerson(@PathVariable("id") String id, @RequestBody Person person) {
+        return ResponseEntity.ok(person);
     }
 
-    @GetMapping("query")
-    public ResponseEntity queryParams(@RequestParam("name") String name){
-        return ResponseEntity.ok(name);
+    @DeleteMapping("person/{id}")
+    public ResponseEntity deletePerson(@PathVariable("id") String id) {
+        return ResponseEntity.ok("");
     }
-}
