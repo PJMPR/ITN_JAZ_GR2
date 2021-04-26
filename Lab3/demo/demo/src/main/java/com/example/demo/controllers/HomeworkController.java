@@ -8,13 +8,13 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("homework")
 public class HomeworkController {
     @GetMapping()
-    public ResponseEntity x(){
+    public ResponseEntity x() {
         return ResponseEntity.ok("x");
     }
 
     @GetMapping("{location}")
     public ResponseEntity params(@PathVariable("location") String location,
-                                 @RequestParam("query") String query){
+                                 @RequestParam("query") String query) {
         return ResponseEntity.ok("path:" + location + " query:" + query);
     }
 
@@ -32,3 +32,4 @@ public class HomeworkController {
     public ResponseEntity deletePerson(@PathVariable("id") String id) {
         return ResponseEntity.ok("");
     }
+}
