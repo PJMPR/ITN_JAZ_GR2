@@ -1,5 +1,6 @@
 package com.example.demo.contract;
 
+
 public class Person {
 
     String name;
@@ -29,4 +30,3 @@ public class Person {
     public void setAge(int age) {
         this.age = age;
     }
-}
