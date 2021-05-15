@@ -3,5 +3,5 @@ jdk:
   - openjdk16
   
 script:
-  - cd Lab3/demo/demo
+  - cd Lab4/demo/demo
   - mvn test
