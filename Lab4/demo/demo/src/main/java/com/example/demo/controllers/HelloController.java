@@ -8,6 +8,12 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("hello")// localhost:8080/hello
 public class HelloController {
 
+
+    @GetMapping("exception")
+    public ResponseEntity throwException() throws Exception {
+        throw new Exception("testowy blad");
+    }
+
     @GetMapping("test") // (HTTP GET) localhost:8080/hello/test
     public ResponseEntity helloWorld(){
         return ResponseEntity.ok("Hello World");
