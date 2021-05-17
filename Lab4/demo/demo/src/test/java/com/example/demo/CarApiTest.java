@@ -72,27 +72,27 @@ public class CarApiTest {
         mvc.perform(MockMvcRequestBuilders.get("/cars/40").accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isNotFound());
 
-//        mvc.perform(put("/cars/1")
-//                .contentType("application/json")
-//                .content(objectMapper.writeValueAsString(car3)))
-//                .andExpect(status().isOk())
-//        ;
-//
-//        mvc.perform(MockMvcRequestBuilders.get("/cars/1").accept(MediaType.APPLICATION_JSON))
-//                .andExpect(status().isOk())
-//                .andExpect(jsonPath("$.model").value("BMW3"));
-//
-//        mvc.perform(put("/cars/60")
-//                .contentType("application/json")
-//                .content(objectMapper.writeValueAsString(car3)))
-//                .andExpect(status().isNotFound());
-//
-//
-//        mvc.perform(delete("/cars/1")).andExpect(status().isNoContent());
-//        mvc.perform(delete("/cars/1")).andExpect(status().isNotFound());
-//        mvc.perform(delete("/cars/2")).andExpect(status().isNoContent());
-//        mvc.perform(delete("/cars/2")).andExpect(status().isNotFound());
-//        mvc.perform(delete("/cars/3")).andExpect(status().isNoContent());
-//        mvc.perform(delete("/cars/3")).andExpect(status().isNotFound());
+        mvc.perform(put("/cars/1")
+                .contentType("application/json")
+                .content(objectMapper.writeValueAsString(car3)))
+                .andExpect(status().isOk())
+        ;
+
+        mvc.perform(MockMvcRequestBuilders.get("/cars/1").accept(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.model").value("BMW3"));
+
+        mvc.perform(put("/cars/60")
+                .contentType("application/json")
+                .content(objectMapper.writeValueAsString(car3)))
+                .andExpect(status().isNotFound());
+
+
+        mvc.perform(delete("/cars/1")).andExpect(status().isNoContent());
+        mvc.perform(delete("/cars/1")).andExpect(status().isNotFound());
+        mvc.perform(delete("/cars/2")).andExpect(status().isNoContent());
+        mvc.perform(delete("/cars/2")).andExpect(status().isNotFound());
+        mvc.perform(delete("/cars/3")).andExpect(status().isNoContent());
+        mvc.perform(delete("/cars/3")).andExpect(status().isNotFound());
     }
 }

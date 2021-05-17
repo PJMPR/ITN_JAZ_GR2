@@ -40,7 +40,7 @@ public class CarsController {
     public ResponseEntity updateCar(@PathVariable int id, @RequestBody Car car){
         Car result = service.update(id, car);
         if (result == null) return ResponseEntity.notFound().build();
-        return ResponseEntity.noContent().build();
+        return ResponseEntity.ok().build();
     }
 
     @DeleteMapping("{id}")
