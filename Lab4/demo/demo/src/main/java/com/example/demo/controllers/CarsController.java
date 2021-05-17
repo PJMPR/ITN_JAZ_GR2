@@ -1,7 +1,7 @@
 package com.example.demo.controllers;
 
 import com.example.demo.contract.Car;
-import com.example.demo.services.CarService;
+import com.example.demo.services.CarsService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -9,11 +9,11 @@ import java.util.List;
 
 @RestController
 @RequestMapping("cars")
-public class CarController {
+public class CarsController {
 
-    private final CarService service;
+    private final CarsService service;
 
-    public CarController(CarService service) {
+    public CarsController(CarsService service) {
         this.service = service;
     }
 

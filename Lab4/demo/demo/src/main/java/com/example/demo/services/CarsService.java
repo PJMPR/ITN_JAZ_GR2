@@ -9,7 +9,7 @@ import java.util.Optional;
 import java.util.OptionalInt;
 
 @Service
-public class CarService {
+public class CarsService {
 
     public List<Car> db = new ArrayList<>();
 
