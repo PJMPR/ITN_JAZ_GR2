@@ -51,11 +51,9 @@ public class CarApiTest {
                 .contentType("application/json")
                 .content(objectMapper.writeValueAsString(car1)));
 
-
         mvc.perform(post("/cars")
                 .contentType("application/json")
                 .content(objectMapper.writeValueAsString(car2)));
-
 
         mvc.perform(post("/cars")
                 .contentType("application/json")
@@ -86,7 +84,6 @@ public class CarApiTest {
                 .contentType("application/json")
                 .content(objectMapper.writeValueAsString(car3)))
                 .andExpect(status().isNotFound());
-
 
         mvc.perform(delete("/cars/1")).andExpect(status().isNoContent());
         mvc.perform(delete("/cars/1")).andExpect(status().isNotFound());
