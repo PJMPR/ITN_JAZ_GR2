@@ -5,7 +5,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("hello")// localhost:8080/hello
+@RequestMapping("hello")
 public class HelloController {
 
 
@@ -14,7 +14,7 @@ public class HelloController {
         throw new Exception("testowy blad");
     }
 
-    @GetMapping("test") // (HTTP GET) localhost:8080/hello/test
+    @GetMapping("test")
     public ResponseEntity helloWorld(){
         return ResponseEntity.ok("Hello World");
     }
@@ -35,7 +35,7 @@ public class HelloController {
         return ResponseEntity.ok(car);
     }
 
-    @GetMapping("test/{someValue}")// /books/Page1 books/Page2 -> "books/Page{number}"
+    @GetMapping("test/{someValue}")// /"
     public ResponseEntity pathParams(@PathVariable("someValue") String value){
         return ResponseEntity.ok(value);
     }
