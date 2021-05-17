@@ -2,57 +2,67 @@ package com.example.demo.contract;
 
 public class Car {
 
-    private String model;
-    private String registrationNumber;
-    private int milleage;
-    private boolean hasAccidents;
-    private double price;
+	private int ID;
+	private String model;
+	private String registrationNumber;
+	private int milleage;
+	private boolean hasAccidents;
+	private double price;
 
-    public Car(String model, String registrationNumber, int milleage, boolean hasAccidents, double price) {
-        this.model = model;
-        this.registrationNumber = registrationNumber;
-        this.milleage = milleage;
-        this.hasAccidents = hasAccidents;
-        this.price = price;
-    }
+	public Car(int id, String model, String registrationNumber, int milleage, boolean hasAccidents, double price) {
+		this.ID = id;
+		this.model = model;
+		this.registrationNumber = registrationNumber;
+		this.milleage = milleage;
+		this.hasAccidents = hasAccidents;
+		this.price = price;
+	}
 
-    public String getModel() {
-        return model;
-    }
+	public int getID() {
+		return ID;
+	}
 
-    public void setModel(String model) {
-        this.model = model;
-    }
+	public void setID(int ID) {
+		this.ID = ID;
+	}
 
-    public String getRegistrationNumber() {
-        return registrationNumber;
-    }
+	public String getModel() {
+		return model;
+	}
 
-    public void setRegistrationNumber(String registrationNumber) {
-        this.registrationNumber = registrationNumber;
-    }
+	public void setModel(String model) {
+		this.model = model;
+	}
 
-    public int getMilleage() {
-        return milleage;
-    }
+	public String getRegistrationNumber() {
+		return registrationNumber;
+	}
 
-    public void setMilleage(int milleage) {
-        this.milleage = milleage;
-    }
+	public void setRegistrationNumber(String registrationNumber) {
+		this.registrationNumber = registrationNumber;
+	}
 
-    public boolean isHasAccidents() {
-        return hasAccidents;
-    }
+	public int getMilleage() {
+		return milleage;
+	}
 
-    public void setHasAccidents(boolean hasAccidents) {
-        this.hasAccidents = hasAccidents;
-    }
+	public void setMilleage(int milleage) {
+		this.milleage = milleage;
+	}
 
-    public double getPrice() {
-        return price;
-    }
+	public boolean isHasAccidents() {
+		return hasAccidents;
+	}
 
-    public void setPrice(double price) {
-        this.price = price;
-    }
+	public void setHasAccidents(boolean hasAccidents) {
+		this.hasAccidents = hasAccidents;
+	}
+
+	public double getPrice() {
+		return price;
+	}
+
+	public void setPrice(double price) {
+		this.price = price;
+	}
 }

@@ -28,7 +28,7 @@ public class CarApiTest {
     @Test
     public void testPostMethod()throws Exception{
 
-        Car car = new Car("BMW","GD1234",200,false,20000);
+        Car car = new Car(1,"BMW","GD1234",200,false,20000);
 
         mvc.perform(post("/cars")
                 .contentType("application/json")
@@ -43,9 +43,9 @@ public class CarApiTest {
                 .andExpect(jsonPath("$.hasAccidents").value(false))
                 .andExpect(jsonPath("$.price").value(20000));
 
-        Car car1 = new Car("BMW1","GD1234",200,false,20000);
-        Car car2 = new Car("BMW2","GD1234",200,false,20000);
-        Car car3 = new Car("BMW3","GD1234",200,false,20000);
+        Car car1 = new Car(2,"BMW1","GD1234",200,false,20000);
+        Car car2 = new Car(3,"BMW2","GD1234",200,false,20000);
+        Car car3 = new Car(4,"BMW3","GD1234",200,false,20000);
 
         mvc.perform(post("/cars")
                 .contentType("application/json")
