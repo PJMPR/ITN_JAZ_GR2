@@ -2,19 +2,25 @@ package com.example.demo.contract;
 
 public class Car {
 
+    private int id;
     private String model;
     private String registrationNumber;
     private int milleage;
     private boolean hasAccidents;
     private double price;
 
-    public Car(String model, String registrationNumber, int milleage, boolean hasAccidents, double price) {
+    public Car(int id, String model, String registrationNumber, int milleage, boolean hasAccidents, double price) {
+        this.id = id;
         this.model = model;
         this.registrationNumber = registrationNumber;
         this.milleage = milleage;
         this.hasAccidents = hasAccidents;
         this.price = price;
     }
+
+    public int getId() { return id; }
+
+    public void setId(int id) { this.id = id; }
 
     public String getModel() {
         return model;

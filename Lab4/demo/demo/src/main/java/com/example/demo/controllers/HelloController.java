@@ -22,6 +22,7 @@ public class HelloController {
     @GetMapping("model")
     public ResponseEntity getNewCar(){
         return ResponseEntity.ok(new Car(
+                1,
                 "Audi",
                 "GD0001",
                 100000,
