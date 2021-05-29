@@ -1,7 +1,15 @@
 package com.example.demo.contract;
 
+
+import javax.persistence.*;
+
+@Entity
+@NamedQuery(name = "Person.findByName",
+        query = "select p from Person p where p.name = ?1")
 public class Person {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     int ID;
     String name;
     String surname;
