@@ -1,12 +1,31 @@
 package com.example.demo.contract;
 
+import javax.persistence.*;
+
+@Entity
+@NamedQuery(name = "Car.findByModel",
+        query = "select c from Car c where c.model = ?1")
 public class Car {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int ID;
     private String model;
     private String registrationNumber;
     private int milleage;
     private boolean hasAccidents;
     private double price;
+
+    public Car() {
+    }
+
+    public int getID() {
+        return ID;
+    }
+
+    public void setID(int ID) {
+        this.ID = ID;
+    }
 
     public Car(String model, String registrationNumber, int milleage, boolean hasAccidents, double price) {
         this.model = model;
