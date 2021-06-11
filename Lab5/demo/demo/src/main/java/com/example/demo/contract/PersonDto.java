@@ -2,18 +2,32 @@ package com.example.demo.contract;
 
 
 import javax.persistence.*;
+import java.util.Date;
+import java.util.List;
 
-@Entity
-@NamedQuery(name = "Person.findByName",
-        query = "select p from Person p where p.name = ?1")
-public class Person {
+public class PersonDto {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     int ID;
     String name;
     String surname;
     int age;
+    List<AddressDto> addresses;
+    Date birthday;
+    public List<AddressDto> getAddresses() {
+        return addresses;
+    }
+
+    public void setAddresses(List<AddressDto> addresses) {
+        this.addresses = addresses;
+    }
+
+    public Date getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(Date birthday) {
+        this.birthday = birthday;
+    }
 
     public int getID() {
         return ID;

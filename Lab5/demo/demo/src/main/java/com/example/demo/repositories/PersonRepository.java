@@ -1,6 +1,6 @@
 package com.example.demo.repositories;
 
-import com.example.demo.contract.Person;
+import com.example.demo.model.Person;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
