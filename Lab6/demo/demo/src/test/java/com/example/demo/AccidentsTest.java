@@ -44,7 +44,7 @@ public class AccidentsTest extends CarApiTestBase{
     public void addAccidentTest() throws Exception {
 
         Calendar calendar = Calendar.getInstance();
-        calendar.set(2000,1,1);
+        calendar.set(2000,0,1);
         AccidentDto january = new AccidentDto("wypadek1", calendar.getTime(), "A1", "B1");
         calendar.add(Calendar.MONTH, 1);
         AccidentDto february = new AccidentDto("wypadek2", calendar.getTime(), "A2", "B2");
