@@ -1,6 +1,8 @@
-package com.example.demo.contract;
+package com.example.demo.model;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @NamedQuery(name = "Car.findByModel",
@@ -24,7 +26,10 @@ public class Car {
     private boolean hasAccidents;
     private double price;
 
-    public Car () {};
+    @OneToMany(mappedBy = "car", fetch = FetchType.EAGER)
+    List<Accident> accidents = new ArrayList<>();
+
+    public Car () {}
 
     public Car(String model, String registrationNumber, int milleage, boolean hasAccidents, double price) {
         this.model = model;
@@ -32,6 +37,14 @@ public class Car {
         this.milleage = milleage;
         this.hasAccidents = hasAccidents;
         this.price = price;
+    }
+
+    public List<Accident> getAccidents() {
+        return accidents;
+    }
+
+    public void setAccidents(List<Accident> accidents) {
+        this.accidents = accidents;
     }
 
     public String getModel() {
