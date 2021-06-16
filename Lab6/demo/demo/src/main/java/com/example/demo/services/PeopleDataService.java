@@ -21,6 +21,7 @@ public class PeopleDataService {
     final private PersonRepository repository;
     final private AddressRepository addressRepository;
     final private Mapper mapper;
+
     public PeopleDataService(PersonRepository repository, AddressRepository addressRepository, Mapper mapper) {
         this.repository = repository;
         this.addressRepository = addressRepository;
@@ -38,7 +39,6 @@ public class PeopleDataService {
                 .pathSegment("addresses")
                 .pathSegment(addressId+"").build().toUriString();
     }
-
 
     public int savePerson(Person person){
         Person result = repository.save(person);
