@@ -73,7 +73,7 @@ public abstract class CarApiTestBase {
 
         mvc.perform(MockMvcRequestBuilders.get("/cars/1").accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.model").value("BMW"));
+                .andExpect(jsonPath("$.model").value("BMW3"));
 
         mvc.perform(put("/cars/60")
                 .contentType("application/json")
@@ -81,8 +81,7 @@ public abstract class CarApiTestBase {
                 .andExpect(status().isNotFound());
 
 
-        mvc.perform(delete("/cars/1")).andExpect(status().isNoContent());
-        mvc.perform(delete("/cars/1")).andExpect(status().isNotFound());
+
         mvc.perform(delete("/cars/2")).andExpect(status().isNoContent());
         mvc.perform(delete("/cars/2")).andExpect(status().isNotFound());
         mvc.perform(delete("/cars/3")).andExpect(status().isNoContent());
