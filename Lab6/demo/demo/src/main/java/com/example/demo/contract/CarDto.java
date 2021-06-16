@@ -1,15 +1,11 @@
 package com.example.demo.contract;
 
-import javax.persistence.*;
 
-@Entity
-@NamedQuery(name = "Car.findByModel",
-        query = "select c from Car c where c.model = ?1")
+import java.util.ArrayList;
+import java.util.List;
 
-public class Car {
+public class CarDto {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     int ID;
     public int getID() {
         return ID;
@@ -24,14 +20,24 @@ public class Car {
     private boolean hasAccidents;
     private double price;
 
-    public Car () {};
+    List<AccidentSummaryDto> accidents = new ArrayList<AccidentSummaryDto>();
 
-    public Car(String model, String registrationNumber, int milleage, boolean hasAccidents, double price) {
+    public CarDto () {}
+
+    public CarDto(String model, String registrationNumber, int milleage, boolean hasAccidents, double price) {
         this.model = model;
         this.registrationNumber = registrationNumber;
         this.milleage = milleage;
         this.hasAccidents = hasAccidents;
         this.price = price;
+    }
+
+    public List<AccidentSummaryDto> getAccidents() {
+        return accidents;
+    }
+
+    public void setAccidents(List<AccidentSummaryDto> accidents) {
+        this.accidents = accidents;
     }
 
     public String getModel() {
