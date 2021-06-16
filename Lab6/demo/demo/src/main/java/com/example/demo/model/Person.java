@@ -1,6 +1,5 @@
 package com.example.demo.model;
 
-
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -8,6 +7,7 @@ import java.util.List;
 @Entity
 @NamedQuery(name = "Person.findByName",
         query = "select p from Person p where p.name = ?1")
+
 public class Person {
 
     @Id
