@@ -1,6 +1,6 @@
 package com.example.demo.controllers;
 
-import com.example.demo.contract.Car;
+import com.example.demo.model.Car;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
