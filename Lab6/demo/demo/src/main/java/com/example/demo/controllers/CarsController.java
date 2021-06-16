@@ -30,11 +30,6 @@ public class CarsController {
         return ResponseEntity.ok(carService.getAll(model));
     }
 
-//    @GetMapping()
-//    public ResponseEntity<List<CarDto>> getAll() {
-//        return ResponseEntity.ok(carService.getAll());
-//    }
-
     @PostMapping()
     public ResponseEntity saveCar(@RequestBody Car car) {
         int id = carService.saveCar(car);
@@ -84,7 +79,6 @@ public class CarsController {
         return ResponseEntity.ok(accidents);
     }
 
-    //DONE
     @GetMapping("{id}/accidents/{accident_id}")
     public ResponseEntity getAccidentById(
             @PathVariable("id") int carId,

@@ -34,38 +34,38 @@ public class CarService {
 //        accidents.stream().forEach(a->a.setLocation(getUri(carId, a.getId())));
 //    }
 
-    private void setLocationOnAccidents(int carId, List<AccidentSummaryDto> accidents){
-        accidents.stream().forEach(a->a.setLocation(getUri(carId, a.getId())));
+    private void setLocationOnAccidents(int carId, List<AccidentSummaryDto> accidents) {
+        accidents.stream().forEach(a -> a.setLocation(getUri(carId, a.getId())));
     }
 
-    private String getUri(int carId, int accidentId){
+    private String getUri(int carId, int accidentId) {
         return ServletUriComponentsBuilder.fromCurrentContextPath()
                 .pathSegment("cars")
-                .pathSegment(carId+"")
+                .pathSegment(carId + "")
                 .pathSegment("accidents")
-                .pathSegment(accidentId+"").build().toUriString();
+                .pathSegment(accidentId + "").build().toUriString();
     }
 
-    public List<CarDto> getAll(String model){
+    public List<CarDto> getAll(String model) {
         List<Car> result;
-        if(model == null || model == "")
-            result= carRepository.findAll();
+        if (model == null || model == "")
+            result = carRepository.findAll();
         else result = carRepository.findByModel(model);
-        List<CarDto> res= result.stream()
-                .map(x->mapper.map(x, CarDto.class))
+        List<CarDto> res = result.stream()
+                .map(x -> mapper.map(x, CarDto.class))
                 .collect(Collectors.toList());
-        res.stream().forEach(c->setLocationOnAccidents(c.getID(),c.getAccidents()));
+        res.stream().forEach(c -> setLocationOnAccidents(c.getID(), c.getAccidents()));
         return res;
     }
 
-    public int saveCar(Car car){
+    public int saveCar(Car car) {
         this.carRepository.save(car);
         return car.getID();
     }
 
-    public CarDto getById(int id){
+    public CarDto getById(int id) {
         Car car = carRepository.findById(id).orElse(null);
-        if(car == null) return null;
+        if (car == null) return null;
         CarDto result = mapper.map(car, CarDto.class);
         setLocationOnAccidents(result.getID(), result.getAccidents());
         return result;
@@ -74,7 +74,7 @@ public class CarService {
 
     public CarDto update(int id, Car c) {
         Car car = carRepository.findById(id).orElse(null);
-        if(car==null)return null;
+        if (car == null) return null;
         car.setHasAccidents(c.isHasAccidents());
         car.setModel(c.getModel());
         car.setMilleage(c.getMilleage());
@@ -90,16 +90,16 @@ public class CarService {
         return result.get();
     }
 
-    public CarDto deleteCar(int id){
+    public CarDto deleteCar(int id) {
         Car car = carRepository.findById(id).orElse(null);
-        if(car==null)return null;
+        if (car == null) return null;
         carRepository.delete(car);
         return mapper.map(car, CarDto.class);
     }
 
     public AccidentDto saveAccident(int carId, Accident accident) {
         Car car = carRepository.findById(carId).orElse(null);
-        if(car==null)return null;
+        if (car == null) return null;
         car.getAccidents().add(accident);
         accident.setCar(car);
         carRepository.save(car);
@@ -109,35 +109,33 @@ public class CarService {
 
     public List<AccidentDto> getAccidents(int carId) {
         Car car = carRepository.findById(carId).orElse(null);
-        if(car==null)return null;
+        if (car == null) return null;
         return car.getAccidents()
                 .stream()
-                .map(x->mapper.map(x, AccidentDto.class))
+                .map(x -> mapper.map(x, AccidentDto.class))
                 .collect(Collectors.toList());
     }
 
     public AccidentDto getAccidentById(int carId, int accidentId) {
         Car car = carRepository.findById(carId).orElse(null);
-        if(car == null) return null;
+        if (car == null) return null;
         Accident accidentToGet = accidentRepository.findById(accidentId).orElse(null);
-        if(accidentToGet==null)return null;
+        if (accidentToGet == null) return null;
         AccidentDto result = mapper.map(accidentToGet, AccidentDto.class);
         return result;
     }
 
 
-
-
     public AccidentDto deleteAccident(int carId, int accidentId) {
         Car car = carRepository.findById(carId).orElse(null);
-        if(car==null)return null;
+        if (car == null) return null;
         Accident accidentToDelete = car
                 .getAccidents()
                 .stream()
-                .filter(a->a.getId()==accidentId)
+                .filter(a -> a.getId() == accidentId)
                 .findFirst()
                 .orElse(null);
-        if(accidentToDelete == null) return null;
+        if (accidentToDelete == null) return null;
         car.getAccidents().remove(accidentToDelete);
         accidentRepository.delete(accidentToDelete);
         return mapper.map(accidentToDelete, AccidentDto.class);
@@ -145,47 +143,12 @@ public class CarService {
 
     public AccidentDto updateAccident(int carId, int accidentId, AccidentDto accident) {
         Car car = carRepository.findById(carId).orElse(null);
-        if(car==null)return null;
+        if (car == null) return null;
         Accident accidentToUpdate = accidentRepository.findById(accidentId).orElse(null);
-        if(accidentToUpdate==null)return null;
+        if (accidentToUpdate == null) return null;
         mapper.map(accident, accidentToUpdate);
         accidentToUpdate.setId(accidentId);
         accidentRepository.save(accidentToUpdate);
         return accident;
     }
-
-
-
-//
-//    public List<Car> getAll() {
-//        return this.carRepository.findAll();
-//    }
-//
-//    public int saveCar(Car car) {
-//        this.carRepository.save(car);
-//        return car.getID();
-//    }
-//
-//    public Car getById(int id) {
-//        Car result = getCarById(id);
-//        return result;
-//    }
-//
-//    public Car update(int id, Car car) {
-//        Car result = getCarById(id);
-//        if (result == null) return null;
-//        car.setID(id);
-//        this.carRepository.save(car);
-//        return result;
-//    }
-//
-
-//
-//    public Car deleteCar(int id) {
-//        Car result = getCarById(id);
-//        if (result == null) return null;
-//        this.carRepository.delete(result);
-//        return result;
-//
-//    }
 }
