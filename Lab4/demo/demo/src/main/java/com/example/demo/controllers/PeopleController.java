@@ -7,7 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpRequest;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
+import org.springframework.web.util.UriComponents;
 
+import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -32,7 +35,9 @@ public class PeopleController {
     public ResponseEntity savePerson(@RequestBody Person person) {
 
         int id = service.savePerson(person);
-        return ResponseEntity.created(URI.create("http://localhost:8080/people/"+id)).build();
+
+        UriComponents uri = ServletUriComponentsBuilder.fromCurrentContextPath().path(id+"").build();
+        return ResponseEntity.created(uri.toUri()).build();
     }
 
     @GetMapping("{id}")

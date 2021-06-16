@@ -80,9 +80,6 @@ public abstract class CarApiTestBase {
                 .content(objectMapper.writeValueAsString(car3)))
                 .andExpect(status().isNotFound());
 
-
-        //mvc.perform(delete("/cars/1")).andExpect(status().isNoContent());
-       // mvc.perform(delete("/cars/1")).andExpect(status().isNotFound());
         mvc.perform(delete("/cars/2")).andExpect(status().isNoContent());
         mvc.perform(delete("/cars/2")).andExpect(status().isNotFound());
         mvc.perform(delete("/cars/3")).andExpect(status().isNoContent());
