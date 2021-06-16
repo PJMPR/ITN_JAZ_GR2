@@ -1,23 +1,30 @@
 package com.example.demo.contract;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 
-@Entity
-public class Car {
+import java.util.ArrayList;
+import java.util.List;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+public class CarDto {
+
+    int ID;
+    public int getID() {
+        return ID;
+    }
+    public void setID(int ID) {
+        this.ID = ID;
+    }
+
     private String model;
     private String registrationNumber;
     private int milleage;
     private boolean hasAccidents;
     private double price;
 
-    public Car(String model, String registrationNumber, int milleage, boolean hasAccidents, double price) {
+    List<AccidentSummaryDto> accidents = new ArrayList<AccidentSummaryDto>();
+
+    public CarDto () {}
+
+    public CarDto(String model, String registrationNumber, int milleage, boolean hasAccidents, double price) {
         this.model = model;
         this.registrationNumber = registrationNumber;
         this.milleage = milleage;
@@ -25,8 +32,12 @@ public class Car {
         this.price = price;
     }
 
-    public Car() {
+    public List<AccidentSummaryDto> getAccidents() {
+        return accidents;
+    }
 
+    public void setAccidents(List<AccidentSummaryDto> accidents) {
+        this.accidents = accidents;
     }
 
     public String getModel() {
@@ -67,13 +78,5 @@ public class Car {
 
     public void setPrice(double price) {
         this.price = price;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
     }
 }

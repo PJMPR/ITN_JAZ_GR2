@@ -2,6 +2,7 @@ package com.example.demo.contract;
 
 public class Car {
 
+    private int ID;
     private String model;
     private String registrationNumber;
     private int milleage;
@@ -14,6 +15,14 @@ public class Car {
         this.milleage = milleage;
         this.hasAccidents = hasAccidents;
         this.price = price;
+    }
+
+    public int getID() {
+        return ID;
+    }
+
+    public void setID(int ID) {
+        this.ID = ID;
     }
 
     public String getModel() {
