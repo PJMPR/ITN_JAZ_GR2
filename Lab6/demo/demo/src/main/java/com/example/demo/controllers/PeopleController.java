@@ -1,6 +1,5 @@
 package com.example.demo.controllers;
 
-
 import com.example.demo.contract.AddressDto;
 import com.example.demo.contract.PersonDto;
 import com.example.demo.model.Address;
@@ -20,13 +19,11 @@ public class PeopleController {
     private final PeopleDataService dataService;
 
     public PeopleController(PeopleDataService dataService) {
-
         this.dataService = dataService;
     }
 
     @GetMapping()
     public ResponseEntity getAll(@RequestParam(value = "name", required = false) String name) {
-
         return ResponseEntity.ok(dataService.getAll(name));
     }
 

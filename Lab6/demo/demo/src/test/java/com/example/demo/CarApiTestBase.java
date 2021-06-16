@@ -1,14 +1,10 @@
 package com.example.demo;
 
-import com.example.demo.contract.Car;
+import com.example.demo.model.Car;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.json.BasicJsonTester;
 import org.springframework.http.MediaType;
-import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
@@ -77,7 +73,7 @@ public abstract class CarApiTestBase {
 
         mvc.perform(MockMvcRequestBuilders.get("/cars/1").accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.model").value("BMW3"));
+                .andExpect(jsonPath("$.model").value("BMW"));
 
         mvc.perform(put("/cars/60")
                 .contentType("application/json")

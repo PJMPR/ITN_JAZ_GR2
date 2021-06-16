@@ -8,9 +8,18 @@ public class AccidentDto {
     Date date;
     String culprit;
     String sufferer;
+//    String location;
 
     public AccidentDto() {
     }
+
+//    public String getLocation() {
+//        return location;
+//    }
+
+//    public void setLocation(String location) {
+//        this.location = location;
+//    }
 
     public AccidentDto(String description, Date date, String culprit, String sufferer) {
         Description = description;
