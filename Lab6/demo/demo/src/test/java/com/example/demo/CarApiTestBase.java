@@ -1,14 +1,10 @@
 package com.example.demo;
 
-import com.example.demo.contract.Car;
+import com.example.demo.model.Car;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.json.BasicJsonTester;
 import org.springframework.http.MediaType;
-import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
@@ -84,9 +80,6 @@ public abstract class CarApiTestBase {
                 .content(objectMapper.writeValueAsString(car3)))
                 .andExpect(status().isNotFound());
 
-
-        mvc.perform(delete("/cars/1")).andExpect(status().isNoContent());
-        mvc.perform(delete("/cars/1")).andExpect(status().isNotFound());
         mvc.perform(delete("/cars/2")).andExpect(status().isNoContent());
         mvc.perform(delete("/cars/2")).andExpect(status().isNotFound());
         mvc.perform(delete("/cars/3")).andExpect(status().isNoContent());
