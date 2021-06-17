@@ -1,6 +1,5 @@
 package com.example.demo.controllers;
 
-
 import com.example.demo.contract.AddressDto;
 import com.example.demo.contract.PersonDto;
 import com.example.demo.model.Address;
@@ -10,7 +9,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import org.springframework.web.util.UriComponents;
-
 import java.util.List;
 
 @RestController
@@ -20,13 +18,11 @@ public class PeopleController {
     private final PeopleDataService dataService;
 
     public PeopleController(PeopleDataService dataService) {
-
         this.dataService = dataService;
     }
 
     @GetMapping()
     public ResponseEntity getAll(@RequestParam(value = "name", required = false) String name) {
-
         return ResponseEntity.ok(dataService.getAll(name));
     }
 
@@ -65,7 +61,7 @@ public class PeopleController {
     public ResponseEntity addAddress(
             @PathVariable("id") int id,
             @RequestBody Address address
-            ){
+    ){
         AddressDto a = dataService.saveAddress(id, address);
         if(a==null) return ResponseEntity.notFound().build();
         UriComponents uri = ServletUriComponentsBuilder.fromCurrentContextPath()

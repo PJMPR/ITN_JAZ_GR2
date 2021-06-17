@@ -10,8 +10,6 @@ import com.example.demo.repositories.PersonRepository;
 import com.github.dozermapper.core.Mapper;
 import org.springframework.stereotype.Service;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
-import org.springframework.web.util.UriComponents;
-
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -21,6 +19,7 @@ public class PeopleDataService {
     final private PersonRepository repository;
     final private AddressRepository addressRepository;
     final private Mapper mapper;
+
     public PeopleDataService(PersonRepository repository, AddressRepository addressRepository, Mapper mapper) {
         this.repository = repository;
         this.addressRepository = addressRepository;
@@ -38,7 +37,6 @@ public class PeopleDataService {
                 .pathSegment("addresses")
                 .pathSegment(addressId+"").build().toUriString();
     }
-
 
     public int savePerson(Person person){
         Person result = repository.save(person);
