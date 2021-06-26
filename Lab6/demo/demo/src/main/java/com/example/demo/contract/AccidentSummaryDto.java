@@ -1,11 +1,8 @@
 package com.example.demo.contract;
 
-import com.example.demo.model.Address;
+public class AccidentSummaryDto {
 
-public class AddressSummaryDto {
     int id;
-    Address.AddressType type;
-
     String location;
 
     public int getId() {
@@ -14,14 +11,6 @@ public class AddressSummaryDto {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public Address.AddressType getType() {
-        return type;
-    }
-
-    public void setType(Address.AddressType type) {
-        this.type = type;
     }
 
     public String getLocation() {
