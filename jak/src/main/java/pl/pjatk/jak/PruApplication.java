@@ -13,10 +13,13 @@ public class PruApplication {
 
 
 //		SpringApplication.run(PruApplication.class, args);
-		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
-		context.scan("pl.pjatk.jak");
-		context.refresh();
-		NewComponent newComponent = new NewComponent(context);
+//		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
+//		context.scan("pl.pjatk.jak");
+//		context.refresh();
+
+		ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
+		NewComponent newComponent = context.getBean(NewComponent.class);
+//		NewComponent newComponent = new NewComponent(context);
 	}
 
 }

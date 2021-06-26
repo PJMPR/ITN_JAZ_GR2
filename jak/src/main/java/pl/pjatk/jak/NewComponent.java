@@ -11,4 +11,9 @@ public class NewComponent {
         firstComponent.printMe();
         secondComponent.printMe();
     }
+
+    public NewComponent(FirstComponent firstComponent, SecondComponent secondComponent) {
+        firstComponent.printMe();
+        secondComponent.printMe();
+    }
 }
