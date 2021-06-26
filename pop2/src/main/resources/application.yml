@@ -1,0 +1,7 @@
+my:
+  custom:
+    property:
+      Hello from application properties
+  own:
+    variable:
+      false
