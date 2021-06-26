@@ -13,8 +13,11 @@ public class DIConfiguration {
     private String welcomeMessage;
 
     @Bean
-    public CarPOJO car(){
-        return new CarPOJO("","",100,false,0.00);
+    public CarPOJO car(@Value("${my.own.variable}") boolean create){
+        if (create)
+            return new CarPOJO("","",100,false,0.00);
+        else
+            return null;
     }
 
     @Bean
