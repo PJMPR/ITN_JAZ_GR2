@@ -11,5 +11,7 @@ public class SecondComponent {
         System.out.println("SecondComponent");
     }
 
-
+//    public void printMe(){
+//        System.out.println("SecondComponent.printMe");
+//    }
 }

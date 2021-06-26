@@ -12,10 +12,9 @@ public class PruApplication {
 	public static void main(String[] args) {
 
 
-//		SpringApplication.run(PruApplication.class, args);
+		SpringApplication.run(PruApplication.class, args);
 
-		FirstComponent firstComponent = new FirstComponent();
-		SecondComponent secondComponent = new SecondComponent(firstComponent);
+//		SecondComponent secondComponent = new SecondComponent(firstComponent);
 
 	}
 
