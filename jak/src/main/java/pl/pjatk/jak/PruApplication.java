@@ -14,8 +14,6 @@ public class PruApplication {
 
 		SpringApplication.run(PruApplication.class, args);
 
-//		SecondComponent secondComponent = new SecondComponent(firstComponent);
-
 	}
 
 }
