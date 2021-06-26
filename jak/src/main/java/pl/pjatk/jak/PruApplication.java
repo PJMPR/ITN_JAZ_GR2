@@ -12,8 +12,11 @@ public class PruApplication {
 	public static void main(String[] args) {
 
 
-		SpringApplication.run(PruApplication.class, args);
-
+//		SpringApplication.run(PruApplication.class, args);
+		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
+		context.scan("pl.pjatk.jak");
+		context.refresh();
+		NewComponent newComponent = new NewComponent(context);
 	}
 
 }

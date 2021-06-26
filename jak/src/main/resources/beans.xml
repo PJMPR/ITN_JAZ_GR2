@@ -3,14 +3,14 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="first" class="pl.pjatk.jak.FirstComponent"></bean>
+<!--    <bean id="first" class="pl.pjatk.jak.FirstComponent"></bean>-->
 
-    <bean id="second" class="pl.pjatk.jak.SecondComponent">
-        <constructor-arg index="0" ref="first"/>
-    </bean>
+<!--    <bean id="second" class="pl.pjatk.jak.SecondComponent">-->
+<!--        <constructor-arg index="0" ref="first"/>-->
+<!--    </bean>-->
 
-    <bean id="third" class="pl.pjatk.jak.ThirdComponent">
-        <constructor-arg index="0" ref="second"/>
-    </bean>
+<!--    <bean id="new" class="pl.pjatk.jak.NewComponent">-->
+<!--        <constructor-arg index="0" ref="second"/>-->
+<!--    </bean>-->
 
 </beans>
